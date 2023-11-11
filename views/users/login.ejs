@@ -1,0 +1,30 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="mt-5">
+    <h1 class="text-center">Login</h1>
+<div class="row d-flex justify-content-center">
+    <div class="col-md-3 shadow py-5 rounded">
+        <form action="/login" method="post" class="validated-form" novalidate>
+            <div class="mb-3">
+                <label for="Username" class="form-label">Username:</label>
+                <input type="text" class="form-control" placeholder="username" name="username"
+                    id="Username" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+            </div>
+        
+            <div class="mb-3">
+                <label for="password" class="form-label">Password:</label>
+                <input type="password" class="form-control" placeholder="password" name="password"
+                    id="password" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+            </div>
+        
+            <button class="btn btn-success">Login</button>
+        </form>
+    </div>
+</div>
+</div>

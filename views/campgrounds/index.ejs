@@ -1,0 +1,20 @@
+<% layout('layouts/boilerplate') %> 
+<link rel="stylesheet" href="/styles/campgrounds.css">
+    <h1 class="text-center my-3">All Campgrounds</h1>
+          <% for(let campground of campgrounds){ %> 
+           <div class="d-flex shadow my-3 card-body rounded">
+            <div class="card col-md-4 mx-3 my-3" style="width: 18rem;">
+              <% if (campground.images) { %>
+                <img src="<%=campground.images %> " class="card-img-top">
+              <% } else {%>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz1Nmv1PXvjrE6c1ZCYircHdrNxfVO3mCz9ODpeXcB5Fo8Jr3cgtKcLcJ7jUsSSFD9-Kk&usqp=CAU" class="card-img-top">
+                <% } %> 
+              </div>
+               <div class="card-body mt-4">
+                 <h5 class="card-title"><%= campground.title %> </h5>
+                 <p class="card-text"><%= campground.description %> </p>
+                 <a href="/campgrounds/<%= campground._id %> " class="btn btn-sm btn-success">View <%= campground.title %> </a>
+               </div>
+           </div>
+        <% } %> 
+   

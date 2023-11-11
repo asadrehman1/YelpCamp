@@ -1,0 +1,53 @@
+<% layout('layouts/boilerplate') %>
+    <h1 class="text-center">Edit Campground!</h1>
+    <div class="row">
+        <div class="col-6 offset-3">
+            <form action="/campgrounds/<%= updatedCamp._id %>?_method=put" method="post" novalidate enctype="multipart/form-data"
+                class="validated-form">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title: </label>
+                    <input type="text" class="form-control" placeholder="Enter a Title" name="campground[title]"
+                        id="title" value="<%= updatedCamp.title %>" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location: </label>
+                    <input type="text" class="form-control" placeholder="Enter a Location" name="campground[location]"
+                        id="location" value="<%= updatedCamp.location %>" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                </div>
+                <label for="price" class="form-label">Price: </label>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="price-label">$</span>
+                    <input type="text" class="form-control" placeholder="0.0" aria-label="price-label"
+                        aria-describedby="price-label" id="price" name="campground[price]"
+                        value="<%= updatedCamp.price %>" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="image" class="form-label">Add images: </label>
+                    <input type="file" name="images" id="image" multiple>
+                </div>
+
+                <div class="mb-3">
+                    <label for="textarea" class="form-label">Description: </label>
+                    <textarea type="text" class="form-control" placeholder="Enter a Location"
+                        name="campground[description]" id="textarea" required><%= updatedCamp.description %> </textarea>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                </div>
+
+                <button class="my-3 btn btn-success">Update Campground</button>
+            </form>
+            <a href="/campgrounds">Back To Campground</a>
+        </div>
+    </div>
